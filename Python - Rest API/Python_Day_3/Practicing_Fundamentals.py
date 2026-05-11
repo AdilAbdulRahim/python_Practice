@@ -121,16 +121,80 @@
 # user["job"] = "programmer"
 # print(user)
 
+# user = {
+#     "name" : "Ben",
+#     "age" : 22,
+#     "address" : {
+#         "country" : "Canada",
+#         "city" : "Halifax"
+#     }
+# }
+# # print(user)
+# print(user["address"]["city"])
+
+# with open("notes.txt", "w") as file:
+#     file.write("Hello World")
+
+# with open("notes.txt", "r") as file:
+#     content = file.read()
+#     print(content)
+
+# with open("notes.txt", "a") as file:
+#     note = input("Write something to contribute to the notes: \n")
+#     file.write("\n")
+#     file.write(note)
+
+# with open("notes.txt", "r") as file:
+#     updated_content = file.read()
+#     print(updated_content)
+
+# while True: 
+#     number = input("Enter a number: ")
+
+#     try: 
+#         number = int(number)
+#         print(f"Your number is: {number}")
+#         break
+
+#     except: #Improvement: Avoid bare except ex: except ValueError:...
+#         print("Enter a valid number")
+
+# sentence = input("Enter your favorite sentence: ")
+# print(f"Uppercase: {sentence.upper()}")
+# print(f"Lowercase: {sentence.lower()}")
+# print(f"Length: {len(sentence)}")
+
+
+# numbers = []
+# for i in range (0,5):
+#     number = int(input("Enter numbers to add to a list: "))
+#     numbers.append(number)
+
+# print(numbers)
+
+# total = 0 
+
+# for i in range(len(numbers)): #Improvement: for number in number
+#     total += numbers[i] #Improvement: total += number
+
+# print(f"The sum of all the numbers in the list is: {total}")
+
+def find_largest(number):
+    largest = 0 #Improvement: largest = list[0] so that it can take in negative values
+    for num in number:
+        if num > largest:
+            largest = num
+    return largest
+    
+
+def main():
+    number = [50,10,3,20,5]
+    largest = find_largest(number)
+    print(f"The largest number in the list is: {largest}")
+
+main()
 
 
 
-user = {
-    "name" : "Ben",
-    "age" : 22,
-    "address" : {
-        "country" : "Canada",
-        "city" : "Halifax"
-    }
-}
-# print(user)
-print(user["address"]["city"])
+
+
