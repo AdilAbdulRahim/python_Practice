@@ -230,5 +230,57 @@
 
 # main()
 
+# def remove_duplicates(numbers):
+#     no_dupe = []
+#     for num in numbers:
+#         if num not in  no_dupe:
+#             no_dupe.append(num)
+#     return no_dupe
 
+# def main():
+#     numbers = [1,1,2,2,2,3,4,5,5,6]
+#     test = remove_duplicates(numbers)
+#     print(f"Here is the list without duplicates: {test}")
 
+# main()
+
+# def find_smallest(numbers):
+#     smallest = numbers[0]
+#     for num in numbers:
+#         if num < smallest:
+#             smallest = num
+#     return smallest
+
+# def main():
+#     numbers = [0,-4,2,3,-10]
+#     test = find_smallest(numbers)
+#     print(f"The smallest value in the list is: {test}")
+
+# main()
+
+# def count_vowels(sentence):
+#     vowels = 0
+#     for letter in sentence:
+#         if letter.lower() in ('a', 'e', 'i', 'o', 'u'):
+#             vowels  += 1
+#     return vowels
+
+# def main():
+#     sentence = input("Enter a sentence: ")
+#     test = count_vowels(sentence)
+#     print(f"There are {test} vowel(s) in the sentence")
+
+# main()
+
+# def reverse_string(sentence):
+#     reversed_text = ""
+#     for letter in range(len(sentence) -1, -1, -1):
+#         reversed_text += sentence[letter]
+#     return reversed_text
+
+# def main():
+#     sentence = input("Enter a sentence to reverse: ")
+#     test = reverse_string(sentence)
+#     print(f"Your string reversed is as follows: {test}")
+
+# main()
