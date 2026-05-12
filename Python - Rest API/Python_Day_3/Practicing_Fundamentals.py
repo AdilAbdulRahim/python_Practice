@@ -179,22 +179,56 @@
 
 # print(f"The sum of all the numbers in the list is: {total}")
 
-def find_largest(number):
-    largest = 0 #Improvement: largest = list[0] so that it can take in negative values
-    for num in number:
-        if num > largest:
-            largest = num
-    return largest
+# def find_largest(number):
+#     largest = 0 #Improvement: largest = list[0] so that it can take in negative values
+#     for num in number:
+#         if num > largest:
+#             largest = num
+#     return largest
     
 
-def main():
-    number = [50,10,3,20,5]
-    largest = find_largest(number)
-    print(f"The largest number in the list is: {largest}")
+# def main():
+#     number = [50,10,3,20,5]
+#     largest = find_largest(number)
+#     print(f"The largest number in the list is: {largest}")
 
-main()
+# main()
 
+# def contains_number(numbers, target_number):
+#     for number in numbers:
+#         if number == target_number:
+#             return True
+#     return False
+    
+        
+# def main():
+#     numbers = []
+#     for i in range (5):
+#         number = int(input("Enter 5 numbers to be on your list: "))
+#         numbers.append(number)
+#     target_number = int(input("what number would you like to check to see if it is on the list: "))
+#     match = contains_number(numbers, target_number)
+#     print(match)
 
+# main()
+
+# def count_occurrences (numbers, target_number):
+#     count = 0
+#     for number in numbers:
+#         if number == target_number:
+#             count += 1
+#     return count
+        
+# def main():
+#     numbers = []
+#     for i in range(5):
+#         number = int(input(f"Enter {i+1} numbers to be on your list: "))
+#         numbers.append(number)
+#     target_number = int(input("What number would you like to count: "))
+#     count = count_occurrences(numbers, target_number)
+#     print(f"The number appears {count} times.")
+
+# main()
 
 
 
