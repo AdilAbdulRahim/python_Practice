@@ -22,23 +22,42 @@
 
 # c1.display_info()
 
-class BankAccount:
-    def __init__(self, owner, balance):
-        self.owner = owner
-        self.balance = balance
+# class BankAccount:
+#     def __init__(self, owner, balance):
+#         self.owner = owner
+#         self.balance = balance
     
-    def deposit(self, amount):
-        self.balance += amount
+#     def deposit(self, amount):
+#         if amount <= 0:
+#             print("Please enter a valid amount: ")
+#         else: 
+#             self.balance += amount
+#             print(f"{amount} has been deposited.")
 
-    def withdraw(self, amount):
-        self.balance -= amount
+#     def withdraw(self, amount):
+#         if amount <= self.balance and amount > 0:
+#             self.balance -= amount
+#             print(f"You have withdrawn ${amount}, you remaining balance is: {self.balance}")
+#         elif amount > self.balance:
+#             print(f"You do not have enough funds to withdraw {amount}")
+#         else:
+#             print("Please enter a valid amount")
 
-    def show_balance(self):
-        print(self.balance)
+#     def show_balance(self):
+#         print(f"Balance: {self.balance}")
 
-cx = BankAccount("Ben", 4000)
+# cx = BankAccount("Ben", 4000)
 
-cx.withdraw(400)
-cx.show_balance()
-cx.deposit(400)
-cx.show_balance()
+
+print("--------------------\n Welcome to The Bank\n--------------------")
+while True:
+   menu = int(input("""Would you like to:
+1. Deposit
+2. Withdraw
+3. See Balance
+4. Exit"""))
+   
+   
+   break
+
+    
