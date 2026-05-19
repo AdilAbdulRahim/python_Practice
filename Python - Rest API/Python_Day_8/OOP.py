@@ -26,36 +26,75 @@ class BankAccount:
     def __init__(self, owner, balance):
         self.owner = owner
         self.balance = balance
+        self.transactions = []
     
     def deposit(self, amount):
+       if amount <= 0:
+           return "Invalid deposit amount"
+       
        self.balance += amount
-       print(f"You have deposited ${amount}, you remaining balance is: ${self.balance}")
+
+       self.transactions.append({
+            "type": "deposit",
+            "amount": amount,
+            "balance": self.balance
+        })
+
+       return self.balance
+    
+    
+       
+       # print(f"You have deposited ${amount}, you remaining balance is: ${self.balance}")
        
        
     def withdraw(self, amount):
-        if amount <= self.balance and amount > 0:
-            self.balance -= amount
-            print(f"You have withdrawn ${amount}, you remaining balance is: ${self.balance}")
-        elif amount > self.balance:
-            print(f"You do not have enough funds to withdraw {amount}")
-        else:
-            print("Please enter a valid amount")
+        if amount <= 0:
+            return "Invalid amount"
+        
+        if amount > self.balance:
+            return "Insufficient funds"
+        
+        self.balance -= amount
 
+        self.transactions.append({
+            "type": "withdraw",
+            "amount": amount,
+            "balance": self.balance
+        })
+
+        return self.balance
+        # if amount <= self.balance and amount > 0:
+        #     self.balance -= amount
+        #     print(f"You have withdrawn ${amount}, you remaining balance is: ${self.balance}")
+        # elif amount > self.balance:
+        #     print(f"You do not have enough funds to withdraw {amount}")
+        # else:
+        #     print("Please enter a valid amount")
+
+    #logic layer
+    def get_balance(self):
+        return self.balance
+    
+    #presentation layer
     def show_balance(self):
         print(f"Balance: ${self.balance}")
+    
+    def show_transactions(self):
+        for transaction in self.transactions:
+            print(f"{transaction['type'].capitalize()}: ${transaction['amount']} -> Balance: ${transaction['balance']}")
+
 
 account = {
    "Ben": BankAccount("Ben", 500),
    "Sarah": BankAccount("Sarah", 600)
 }
 
+account = account["Ben"]
+account.deposit(50)
+account.withdraw(20)
+account.show_balance()
 
-
-
-
-account["Ben"].deposit(50)
-account["Ben"].withdraw(20)
-account["Ben"].show_balance()
+account.show_transactions()
 
 
 
