@@ -41,11 +41,8 @@ class BankAccount:
         })
 
        return self.balance
-    
-    
        
        # print(f"You have deposited ${amount}, you remaining balance is: ${self.balance}")
-       
        
     def withdraw(self, amount):
         if amount <= 0:
@@ -83,18 +80,39 @@ class BankAccount:
         for transaction in self.transactions:
             print(f"{transaction['type'].capitalize()}: ${transaction['amount']} -> Balance: ${transaction['balance']}")
 
+    def transfer(self, target_account, amount):
+        if amount <= 0:
+            return "Invalid transfer amount"
+        if amount > self.balance:
+            return "Insufficient funds"
+        
+        self.balance -= amount
+        self.transactions.append({
+            "type": "transfer_out",
+            "amount": amount,
+            "to": target_account.owner,
+            "balance": self.balance
+        })
+
+        return self.balance
 
 account = {
    "Ben": BankAccount("Ben", 500),
    "Sarah": BankAccount("Sarah", 600)
 }
 
-account = account["Ben"]
-account.deposit(50)
-account.withdraw(20)
-account.show_balance()
+account_1 = account["Ben"]
+account_2= account["Sarah"]
 
-account.show_transactions()
+account_1.deposit(50)
+account_1.withdraw(20)
+account_1.show_balance()
+
+account_1.transfer(account_2, 200)
+
+account_1.show_transactions()
+
+
 
 
 
